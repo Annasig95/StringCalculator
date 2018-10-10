@@ -1,14 +1,7 @@
 //stringCalculator.js
-function greeting(name) {
-	return "Hello, " + name + "!";
+
+function add(number){
+	return 0;
 }
 
-module.exports = greeting();
-
-
-
-/*const add = require("./calculator");
-
-it("should return zero on an empty string", () => {
-	expect(add("")).toBe(0);
-});*/
+module.exports = add;
