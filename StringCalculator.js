@@ -7,7 +7,11 @@ function add(number){
 
 	if(number.includes(",")){
 		var numberArr = number.split(",");
-		return parseInt(numberArr[0]) + parseInt(numberArr[1]);
+		var result = 0;
+		for(var i = 0; i < numberArr.length; i++){
+			result = result + parseInt(numberArr[i]);
+		}
+		return result;
 	}
 	else {
 		return parseInt(number);
