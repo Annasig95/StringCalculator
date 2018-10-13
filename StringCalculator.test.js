@@ -21,3 +21,7 @@ it("should return the sum of multiple numbers", () => {
 it("should return the sum of inputs with new line (\n)", () => {
 	expect(add("1,2\n3")).toBe(6);
 });
+
+it("should throw an error if string includes a negative number", () => {
+	expect(function(){add("1,2,-3,\n4")}).toThrow(new Error("Negatives not allowed: -3,"));
+});

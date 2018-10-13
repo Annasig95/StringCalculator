@@ -4,16 +4,30 @@ function add(number){
 	if(number == ""){
 		return 0;
 	}
-
 	if(number.includes(",")){
 		var numberArr = number.split(/[',', '\n']+/);
 		var result = 0;
-		for(var i = 0; i < numberArr.length; i++){
-			result = result + parseInt(numberArr[i]);
+		var neg ="Negatives not allowed: ";
+		var hasNeg = false;
+
+		numberArr.forEach(function(item, index, array){
+			if(item.includes("-")){
+				neg = neg + item + ",";
+				hasNeg = true;
+			}
+			else{
+				result = result += parseInt(item);
+			}
+		});
+
+		if(hasNeg){
+			throw new Error(neg);
 		}
-		return result;
+		else {
+			return parseInt(result);
+		}
 	}
-	else {
+	else{
 		return parseInt(number);
 	}
 }
