@@ -6,7 +6,7 @@ function add(number){
 	}
 
 	if(number.includes(",")){
-		var numberArr = number.split(",");
+		var numberArr = number.split(/[',', '\n']+/);
 		var result = 0;
 		for(var i = 0; i < numberArr.length; i++){
 			result = result + parseInt(numberArr[i]);
